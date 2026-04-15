@@ -143,6 +143,17 @@ class CloudWordBattle:
         found = False
         cells_to_clear = set()
 
+        def mark_matches(sequence, coords):
+            nonlocal found
+            for target in (word, word[::-1]):
+                start = sequence.find(target)
+                if start != -1:
+                    for i in range(start, start + len(target)):
+                        cells_to_clear.add(coords[i])
+                    found = True
+                    return True
+            return False
+
         # Horizontal
         for r in range(GRID_SIZE):
             row_str = "".join(
@@ -151,53 +162,51 @@ class CloudWordBattle:
                     for c in range(GRID_SIZE)
                 ]
             )
-            if word in row_str:
-                idx = row_str.find(word)
-                for c in range(idx, idx + len(word)):
-                    cells_to_clear.add((r, c))
-                found = True
+            row_coords = [(r, c) for c in range(GRID_SIZE)]
+            if mark_matches(row_str, row_coords):
+                break
 
         # Vertical
-        for c in range(GRID_SIZE):
-            col_str = "".join(
-                [
-                    self.grid[r][c] if self.grid[r][c] != "" else " "
-                    for r in range(GRID_SIZE)
-                ]
-            )
-            if word in col_str:
-                idx = col_str.find(word)
-                for r in range(idx, idx + len(word)):
-                    cells_to_clear.add((r, c))
-                found = True
+        if not found:
+            for c in range(GRID_SIZE):
+                col_str = "".join(
+                    [
+                        self.grid[r][c] if self.grid[r][c] != "" else " "
+                        for r in range(GRID_SIZE)
+                    ]
+                )
+                col_coords = [(r, c) for r in range(GRID_SIZE)]
+                if mark_matches(col_str, col_coords):
+                    break
 
         # Diagonals (\ and /)
-        for start_nodes in [
-            [(0, c) for c in range(GRID_SIZE)] + [(r, 0) for r in range(1, GRID_SIZE)],
-            [(0, c) for c in range(GRID_SIZE)]
-            + [(r, GRID_SIZE - 1) for r in range(1, GRID_SIZE)],
-        ]:
-            is_back = start_nodes[-1][1] != 0
-            for r, c in start_nodes:
-                diag_str, coords = "", []
-                curr_r, curr_c = r, c
-                while 0 <= curr_r < GRID_SIZE and 0 <= curr_c < GRID_SIZE:
-                    diag_str += (
-                        self.grid[curr_r][curr_c]
-                        if self.grid[curr_r][curr_c] != ""
-                        else " "
-                    )
-                    coords.append((curr_r, curr_c))
-                    curr_r, curr_c = (
-                        (curr_r + 1, curr_c - 1)
-                        if is_back
-                        else (curr_r + 1, curr_c + 1)
-                    )
-                if word in diag_str:
-                    idx = diag_str.find(word)
-                    for i in range(idx, idx + len(word)):
-                        cells_to_clear.add(coords[i])
-                    found = True
+        if not found:
+            for start_nodes in [
+                [(0, c) for c in range(GRID_SIZE)]
+                + [(r, 0) for r in range(1, GRID_SIZE)],
+                [(0, c) for c in range(GRID_SIZE)]
+                + [(r, GRID_SIZE - 1) for r in range(1, GRID_SIZE)],
+            ]:
+                is_back = start_nodes[-1][1] != 0
+                for r, c in start_nodes:
+                    diag_str, coords = "", []
+                    curr_r, curr_c = r, c
+                    while 0 <= curr_r < GRID_SIZE and 0 <= curr_c < GRID_SIZE:
+                        diag_str += (
+                            self.grid[curr_r][curr_c]
+                            if self.grid[curr_r][curr_c] != ""
+                            else " "
+                        )
+                        coords.append((curr_r, curr_c))
+                        curr_r, curr_c = (
+                            (curr_r + 1, curr_c - 1)
+                            if is_back
+                            else (curr_r + 1, curr_c + 1)
+                        )
+                    if mark_matches(diag_str, coords):
+                        break
+                if found:
+                    break
 
         if found:
             for r, c in cells_to_clear:
@@ -213,6 +222,8 @@ class CloudWordBattle:
 
             bonus = len(word) * 30
             self.score += bonus
+            self.start_ticks += 3000
+            self.time_left += 3
             self.status_msg = f"Nice! '{word}' +{bonus}"
         return found
 
