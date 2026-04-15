@@ -1,0 +1,11 @@
+[project]
+name = "gamelab"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+    "nltk>=3.9.4",
+    "pygame-ce>=2.5.7",
+    "requests>=2.33.1",
+]
