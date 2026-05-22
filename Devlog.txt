@@ -1,0 +1,29 @@
+March 13th:
+Activity: Project Brainstorming & Core Mechanics Design.
+Discussed various game genres and finalized a hybrid concept: a 5x5 grid combining puzzle drop mechanics with dynamic word-building matrix exploration. Drafted the mathematical foundation for score generation based on word length coefficients.
+
+March 20th:
+Activity: Project Brainstorming & Core Mechanics Design.
+Established basic technical stack rules (Python, PyGame, and Cloud Realtime DB for rankings).
+Designed the structural logic for matrix gravity (how cells collapse downwards when words are cleared).
+
+April 3rd:
+Activity: Implementation
+Created the initial repository framework. Uploaded baseline engine structures, asset loaders, and matrix array variables. Implemented the global network streaming pipeline.
+
+April 10th:
+Activity: Implementation
+Implemented the baseline weighted random distribution engine utilizing custom LETTER_FREQ probability tables. Configured the session timer threshold parameter to a 180-second countdown format for early gameplay stress testing.
+
+April 17th:
+Activity: Verification Systems & Input Buffers Refactoring.
+Cleaned legacy repository noise by setting up a robust configuration environment.
+
+May 15th:
+Activity: Game State Merging
+Combination of 2 modes: Arcade Module (synchronized global database logging with volatile timelines) and Practice Environment (infinite local loop for score tracking). Add instructions. 
+
+May 22nd:
+Activity: Final Compliance, Font Registry Patching & Manual Finalization.
+Fully integrated permanent branding and developer compliance fields directly onto the core manual rulesheet header and operational mode selector menu canvas. Completed final system build deployments.
+Add README to GitHub.
