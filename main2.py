@@ -270,7 +270,7 @@ class CloudWordBattle:
         y_offset = 135
         if self.current_rule_page == 0:
             # Academic/Course metadata banner at the absolute beginning of the rulesheet
-            meta_label = self.small_font.render("GameLab CS 2025 - 2026 | Authors: Zeshan MA & Luke OGURO", True, COLOR_GOLD)
+            meta_label = self.small_font.render("WordPuyo  GameLab CS 2025 - 2026 | Authors: Zeshan MA & Luke OGURO", True, COLOR_GOLD)
             self.screen.blit(meta_label, (65, y_offset))
             y_offset += 35
 
@@ -350,7 +350,7 @@ class CloudWordBattle:
         self.screen.fill(BG_COLOR)
         
         # Injected course identity and creator name strings inside the Main Menu Header
-        gamelab_banner = self.small_font.render("GameLab CS 2025 - 2026", True, COLOR_GOLD)
+        gamelab_banner = self.small_font.render("WordPuyo    -  GameLab CS 2025 - 2026", True, COLOR_GOLD)
         creator_banner = self.small_font.render("DEVELOPED BY: ZESHAN MA & LUKE OGURO", True, TEXT_MUTED)
         self.screen.blit(gamelab_banner, (SCREEN_WIDTH // 2 - gamelab_banner.get_width() // 2, 15))
         self.screen.blit(creator_banner, (SCREEN_WIDTH // 2 - creator_banner.get_width() // 2, 35))
