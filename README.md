@@ -1,6 +1,24 @@
-# GameLab
+### 🚀 GameLab CS 2025 - 2026 Academic Project
 WordPuyo
 
-🚀 GameLab CS 2025 - 2026 Academic ProjectDeveloped by Zeshan MA & Luke OGURO, 7x7 Word Battle is a premium, matrix-based word puzzle game written in Python using Pygame. Players strategically drop random letters onto a $7 \times 7$ grid to form words vertically, horizontally, or diagonally. Valid words vanish, triggers matrix gravity, and awards score multipliers!✨ FeaturesDual Operational Modes:⚔️ Arcade Mode: A high-stakes, 30-second blitz session. Every word found adds $+3$ seconds back to your timeline. High scores are instantly streamed to a global Firebase Cloud Leaderboard.📚 Practice Mode: An untimed, infinite environment designed to test matrix endurance and explore complex letter patterns without cloud ranking interference.Lexical Validation Suite: Powered by nltk, validating words dynamically in both forward and backward orientations.Premium Theme: Styled with a dark, high-contrast visual interface, anti-aliased geometry layouts, and responsive particle animation engines.Crash-Resistant Font Architecture: Features a defensive fallback rendering engine designed to automatically bypass Windows Win32 font registry corruption bugs.🛠️ Prerequisites & InstallationMake sure you have Python 3.11+ installed. Install the necessary dependencies before launching the program:Bashpip install pygame requests nltk
-Note: On your initial boot, the system will automatically download the NLTK words dictionary package if it isn't already cached locally.🎮 How To PlayLaunch the Game: Run the primary script file:Bashpython main2.py
-Review Manual: Navigate the in-game tutorial sheets using the LEFT / RIGHT arrow keys or on-screen buttons.Register Operator: Input your player tag (max 10 alphanumeric characters) and hit ENTER.Select Archetype Deck: Click on either ARCADE or PRACTICE card decks to initialize the engine grid.Core Gameplay Loop:Left-Click a column to drop the active floating token into the matrix.Type letters into your live INPUT BUFFER at the bottom framework.Press ENTER to submit and clear words. Press BACKSPACE to wipe errors.Press ESC at any time to retreat back to archetype selections or reset loops.⌨️ Global Hardware Key MapKeyOperation / Command ContextLeft-ClickDeploy falling token into the targeted column arrayA - ZInput string variables directly into the live text bufferENTEREvaluate buffer string against dictionary / Confirm screen configurationsBACKSPACEErase the most recent token character from the text bufferESCAPEFallback to previous structural state machine layer (Menus)RRestart identical session loop (Only inside FINISH termination state)MReturn to archetype deck module deck selection (Only inside FINISH state)📄 Compliance & CreditsThis application was engineered explicitly for the GameLab CS 2025 - 2026 course framework.Authors: Zeshan MA & Luke OGUROSystem Timeline: Academic Term 2025 - 2026Database Pipeline Endpoints: Hosted securely on Firebase Realtime DB.
+Developed by **Zeshan MA** & **Luke OGURO**, **7x7 Word Battle** is a premium, matrix-based word puzzle game written in Python using Pygame. Players strategically drop random letters onto a $7 \times 7$ grid to form words vertically, horizontally, or diagonally. Valid words vanish, triggering matrix gravity and awarding score multipliers!
+
+---
+
+## ✨ Features
+
+* **Dual Operational Modes**:
+  * ⚔️ **Arcade Mode**: A high-stakes, 30-second blitz session. Every word found adds $+3$ seconds back to your timeline. High scores are instantly streamed to a global Firebase Cloud Leaderboard.
+  * 📚 **Practice Mode**: An untimed, infinite environment designed to test matrix endurance and explore complex letter patterns without cloud ranking interference.
+* **Lexical Validation Suite**: Powered by `nltk`, validating words dynamically in both forward and backward orientations.
+* **Premium Theme**: Styled with a dark, high-contrast visual interface, anti-aliased geometry layouts, and responsive particle animation engines.
+* **Crash-Resistant Font Architecture**: Features a defensive fallback rendering engine designed to automatically bypass Windows Win32 font registry corruption bugs.
+
+---
+
+## 🛠️ Prerequisites & Installation
+
+Make sure you have Python installed. Install the necessary dependencies before launching the program:
+
+```bash
+pip install pygame requests nltk
