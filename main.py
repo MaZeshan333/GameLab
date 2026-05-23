@@ -19,7 +19,7 @@ except:
     word_set = set(w.upper() for w in words.words())
 
 # --- Configurable Match Time Settings ---
-ARCADE_START_SECONDS = 30   # Switched default timer limit to 30s
+ARCADE_START_SECONDS = 300   # Switched default timer limit to 300s
 ARCADE_BONUS_SECONDS = 3    # Change this to set the seconds rewarded per word
 
 # --- Configuration ---
