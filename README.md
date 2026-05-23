@@ -8,7 +8,7 @@ Developed by **Zeshan MA** & **Luke OGURO**, **7x7 Word Battle** is a premium, m
 ## ✨ Features
 
 * **Dual Operational Modes**:
-  * ⚔️ **Arcade Mode**: A high-stakes, 30-second blitz session. Every word found adds $+3$ seconds back to your timeline. High scores are instantly streamed to a global Firebase Cloud Leaderboard.
+  * ⚔️ **Arcade Mode**: A high-stakes, 300-second blitz session. Every word found adds $+3$ seconds back to your timeline. High scores are instantly streamed to a global Firebase Cloud Leaderboard.
   * 📚 **Practice Mode**: An untimed, infinite environment designed to test matrix endurance and explore complex letter patterns without cloud ranking interference.
 * **Lexical Validation Suite**: Powered by `nltk`, validating words dynamically in both forward and backward orientations.
 * **Premium Theme**: Styled with a dark, high-contrast visual interface, anti-aliased geometry layouts, and responsive particle animation engines.
